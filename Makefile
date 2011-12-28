@@ -6,7 +6,7 @@ PREFIX=/usr
 all: boot_format
 
 boot_format: boot_format.o
-	$(CC) $< -o $@
+	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
 
 install: boot_format
 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin
