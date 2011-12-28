@@ -98,9 +98,11 @@
 #define LITTLE_ENDIAN_MODE	0
 #define BIG_ENDIAN_MODE		1
 
-#define uchar	unsigned char
-#define ushort	unsigned short
-#define uint	unsigned int
+#include <stdint.h>
+
+#define uchar	uint8_t
+#define ushort	uint16_t
+#define uint	uint32_t
 
 #define MSG_OPEN_FILE_FAIL "Fail to open file \"%s\". Pls check whether it " \
 			   "exists and verify your permission.\n"

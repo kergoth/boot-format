@@ -690,8 +690,10 @@ int main(int argc, char *argv[])
 
 	if ((work_mode == BOOT_WORK_MODE_SPI)&& (rev_space != 0)) {
 		/* Extend file size to accomodate reserved space */
-		lseek(h_dev, rev_space - 1, SEEK_CUR);
-		write(h_dev, &n, 1);
+		if (rev_space) {
+			lseek(h_dev, rev_space - 1, SEEK_CUR);
+			write(h_dev, &n, 1);
+		}
 	}
 
 	lseek(h_dev, 0, SEEK_SET);
