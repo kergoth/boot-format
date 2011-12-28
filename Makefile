@@ -15,6 +15,4 @@ install: boot_format
 	$(INSTALL) config*.dat $(DESTDIR)$(PREFIX)/share/boot_format
 
 clean:
-	rm -rf *.o
-	rm boot_format
-
+	rm -f *.o boot_format
